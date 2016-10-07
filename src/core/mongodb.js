@@ -3,6 +3,8 @@ import { MongoClient } from "mongodb";
 
 import Promise from "bluebird";
 
+import zouti from "zouti";
+
 const MONGO_URL = "mongodb://127.0.0.1:27017/cats";
 
 let oDB; // pour mémoriser la connection a la db
@@ -13,7 +15,7 @@ export default function() {
             if ( oError ) {
                 return fReject( oError );
             }
-            console.log( "Connected to db" );
+            zouti.log( "Connected to db" );
             fResolve( oDB = oDBLink );
         } );
     } );

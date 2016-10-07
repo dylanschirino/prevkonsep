@@ -8,14 +8,18 @@ var _mongodb = require("./core/mongodb");
 
 var _mongodb2 = _interopRequireDefault(_mongodb);
 
+var _zouti = require("zouti");
+
+var _zouti2 = _interopRequireDefault(_zouti);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log();
+_zouti2.default.spacer(2); // pour avoir 2 ligne vide
 
-console.log("Starting");
+_zouti2.default.log("Starting...", "Dylan/prevkonsep"); // pour afficher un message
 
 (0, _mongodb2.default)().then(function () {
     (0, _express2.default)(12345);
 }).catch(function (oError) {
-    console.error(oError);
+    _zouti2.default.error(oError, "Dylan/prevkonsep");
 });

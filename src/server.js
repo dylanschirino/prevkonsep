@@ -4,14 +4,16 @@ import initServer from "./core/express";
 
 import initDB from "./core/mongodb";
 
-console.log();
+import zouti from "zouti";
 
-console.log( "Starting" );
+zouti.spacer( 2 ); // pour avoir 2 ligne vide
+
+zouti.log( "Starting...", "Dylan/prevkonsep" ); // pour afficher un message
 
 initDB()
     .then( () => {
         initServer( 12345 );
     } )
     .catch( ( oError ) => {
-        console.error( oError );
+        zouti.error( oError, "Dylan/prevkonsep" );
     } );
