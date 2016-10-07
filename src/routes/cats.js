@@ -3,12 +3,13 @@ import { Router } from "express";
 
 let oRouter = new Router();
 import list from "../controllers/cats/list";
+import add from "../controllers/cats/add";
 
- oRouter.get( "/cats", list );
+oRouter.get( "/cats", list );
 
 // oRouter.get( "/cats/:name", details );
 
-// oRouter.post( "/cats", add );
+oRouter.post( "/cats", add );
 
 // oRouter.put( "/cats/:name", update );
 

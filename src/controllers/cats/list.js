@@ -6,11 +6,11 @@ export default function( oRequest, oResponse ) {
       .find( {} )
       .toArray()
         .then( ( aCats = [ ] ) => {
-          oResponse.json( aCats );
+            oResponse.json( aCats );
         } )
         .catch( ( oError ) => {
             oResponse.status( 500 ).json( {
-               "errors": [ oError ],
-          } );
+                "errors": [ oError ],
+            } );
         } );
 }
