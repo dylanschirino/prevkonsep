@@ -7,9 +7,9 @@ export default function( oRequest, oResponse ) {
     const POST = oRequest.body;
 
     let sName = ( POST.name || " " ).trim(),
-        iAge= +POST . age,
-        sGender= POST.gender,
-        sColor= (POST.color || "").trim(),
+        iAge = +POST.age,
+        sGender = POST.gender,
+        sColor = ( POST.color || "" ).trim(),
         aErrors = [],
         oCat;
 
