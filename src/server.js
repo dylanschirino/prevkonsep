@@ -1,24 +1,17 @@
 
 
-import express from "express";
-import responseTime from "response-time";
-import bodyParser from "body-parser";
-import simpleLog from "./core/middlewares/logs";
-const APP_PORT = 8080;
-let oApp;
+import initServer from "./core/express";
 
-oApp = express();
+import initDB from "./core/mongodb";
 
-oApp.use( responseTime() );
-oApp.use( bodyParser.json() );
-oApp.use( bodyParser.urlencoded( {
-    "extended": true,
-} ) );
+console.log();
 
-oApp.get( "/", ( oRequest, oResponse ) => {
-    oResponse.send( "Hello, world!" );
-} );
+console.log( "Starting" );
 
-oApp.listen( APP_PORT, () => {
-    console.log( `Server is listening  on port ${ APP_PORT }` ); // eslint-disable-line no-console
-} );
+initDB()
+    .then( () => {
+        initServer( 12345 );
+    } )
+    .catch( ( oError ) => {
+        console.error( oError );
+    } );
