@@ -4,6 +4,7 @@ import express from "express";
 import responseTime from "response-time";
 import bodyParser from "body-parser";
 import simpleLog from "./middlewares/logs";
+import mainRoutes from "../routes/main";
 
 
 const APP_PORT = 8080;
@@ -25,9 +26,7 @@ export default function( iAppPort = APP_PORT ) {
         "extended": true,
     } ) );
 
-    oApp.get( "/", ( oRequest, oResponse ) => {
-        oResponse.send( "Hello, HEPL!" );
-    } );
+    oApp.use( mainRoutes );
 
     oApp.listen( iAppPort, () => {
         console.log( `Server is listening  on port ${ iAppPort }` ); // eslint-disable-line no-console
