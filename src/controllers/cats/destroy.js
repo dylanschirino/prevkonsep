@@ -21,9 +21,9 @@ export default function( oRequest, oResponse ) {
               return oResponse.sendStatus( 204 );
           }
 
-        return oResponse.status( 500 ).json( {
-          "errors": [ "Unknow deletion error" ],
-        });
+          return oResponse.status( 500 ).json( {
+              "errors": [ "Unknow deletion error" ],
+          } );
       } )
       .catch( ( oError ) => {
           oResponse.status( 500 ).json( {
@@ -31,7 +31,7 @@ export default function( oRequest, oResponse ) {
           } );
       } );
 
-      } )
+  } )
       .catch( ( oError ) => {
           oResponse.status( 500 ).json( {
               "errors": [ oError ],
