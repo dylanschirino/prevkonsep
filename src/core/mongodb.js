@@ -5,7 +5,7 @@ import Promise from "bluebird";
 
 import zouti from "zouti";
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/cats";
+const MONGO_URL = "mongodb://127.0.0.1:27017/elephants";
 
 let oDB; // pour mémoriser la connection a la db
 

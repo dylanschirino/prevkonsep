@@ -41,7 +41,7 @@ export default function( oRequest, oResponse ) {
       .then( ( oCatFromDB ) => {
           if ( oCatFromDB ) {
               return oResponse.status( 409 ).json( {
-                  "errors": [ `A cat with the name "${ sName }" already exist` ]
+                  "errors": [ `A cat with the name "${ sName }" already exist` ],
               } );
           }
 

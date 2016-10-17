@@ -14,9 +14,10 @@ export default function( oRequest, oResponse ) {
         }
 
         oResponse.sendStatus( 404 );
-    } ).catch( ( oError ) => {
-            oResponse.status( 500 ).json( {
-                "errors": [ oError ],
-            } );
+    } )
+    .catch( ( oError ) => {
+        oResponse.status( 500 ).json( {
+            "errors": [ oError ],
         } );
+    } );
 }
