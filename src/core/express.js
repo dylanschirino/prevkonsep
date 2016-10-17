@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import simpleLog from "./middlewares/logs";
 import mainRoutes from "../routes/main";
 import catRoutes from "../routes/cats";
+import elephantRoutes from "../routes/elephant";
 import zouti from "zouti";
 
 
@@ -31,6 +32,7 @@ export default function( iAppPort = APP_PORT ) {
 
     oApp.use( mainRoutes );
     oApp.use( catRoutes );
+    oApp.use( elephantRoutes );
 
     oApp.listen( iAppPort, () => {
         zouti.log( `Server is listening  on port ${ iAppPort }`, "Dylan/prevkonsep" );
